@@ -3,7 +3,11 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage : {
+        banner : "./nefliximages/neflix-banner.png"
+      }
+    },
   },
   plugins: [],
 }

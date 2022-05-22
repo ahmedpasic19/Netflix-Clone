@@ -7,10 +7,27 @@
 .navbar{
     @apply bg-black text-white flex flex-row sticky top-0 left-0 justify-start items-center
     w-full sm:h-10 
+    lg:h-16
 }
 .logo_wraper {
-    @apply sm:h-6  ml-2 mr-3
+    @apply sm:h-8  ml-8 mr-3 lg:ml-12 cursor-pointer
+}
+.nav_links {
+    @apply sm:hidden lg:block h-auto w-auto
 }
 .logo {
-    @apply sm:h-6 
+    @apply sm:h-8 
+}
+.resBtn {
+    @apply  bg-red-600 px-2 m-2 lg:hidden hover:text-gray-300
+    rounded
+}
+.dropdownMenu {
+    @apply h-fit bg-red-600 text-white top-10 fixed lg:hidden 
+    flex flex-col w-32 justify-center items-center text-center
+    right-3/4 rounded-b-lg transition-all
+}
+.nav_Link {
+    @apply hover:text-gray-300 w-full h-full p-1 m-1 transition-all
+    hover:bg-transparent
 }
