@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* NAVIGATION BAR */
+.navbar{
+    @apply bg-black text-white flex flex-row sticky top-0 left-0 justify-start items-center
+    w-full sm:h-10 
+}
+.logo_wraper {
+    @apply sm:h-6  ml-2 mr-3
+}
+.logo {
+    @apply sm:h-6 
+}

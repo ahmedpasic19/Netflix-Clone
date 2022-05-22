@@ -1,22 +1,20 @@
 import { Link, NavLink } from "react-router-dom";
 
-import logo from "../nefliximages/netflix-fulllogo.png"
+import logo from "../nefliximages/Logonetflix.png";
 
 export default function NavigationBar() {
   return (
     <div className="navbar">
-      <nav>
-        <div>
-          <img src={logo} alt="logo" />
-        </div>
-        <ul>
-          <Link to="/browse">Home</Link>
-          <Link to="/">Tv Shows</Link>
-          <Link to="/">Movies</Link>
-          <Link to="/">Latest</Link>
-          <Link to="/">MyList</Link>
-        </ul>
-      </nav>
+      <div className="logo_wraper">
+        <img src={logo} alt="logo" className="logo"/>
+      </div>
+      <ul className="nav_links">
+        <Link to="/browse" className="nav_Link">Home</Link>
+        <Link to="/" className="nav_Link">Tv Shows</Link>
+        <Link to="/" className="nav_Link">Movies</Link>
+        <Link to="/" className="nav_Link">Latest</Link>
+        <Link to="/" className="nav_Link">MyList</Link>
+      </ul>
     </div>
   );
 }
