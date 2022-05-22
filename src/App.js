@@ -1,24 +1,38 @@
 import axios from "axios";
+import requests from "./requests";
 
 function App() {
-  const API_KEY = "c4904ed7a4620e6f16fb7d1c33309261"
-
  
-  const newMovie = () => {
+  const fetch = requests.fetc
+
+  const trendingMovie = () => {
+    
     axios({
-      method : "GET",
-      url: `https://api.themoviedb.org/3/movie/550?api_key=${API_KEY}`
+      method: `GET`,
+      url: `https://api.themoviedb.org/3${fetch}`
     }).then((response) => {
       console.log(response)
     })
-    
   }
 
 
   return (
     <div>
-      <button onClick={newMovie}>New Movie</button>
-      <div>Hello</div>
+      <div className="navbar">
+        <nav>
+          Netflix
+          <ul>
+            <a>Home</a>
+            <a>Tv Shows</a>
+            <a>Movies</a>
+            <a>Latest</a>
+            <a>MyList</a>
+          </ul>
+          <div>
+            <img alt="profile_Photo"/>
+          </div>
+        </nav>
+      </div>
     </div>
   );
 }
