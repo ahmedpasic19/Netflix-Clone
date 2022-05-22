@@ -1,38 +1,38 @@
 import axios from "axios";
 import requests from "./requests";
 
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+import NavigationBar from "./components/NavigationBar";
+
+import HeaderPage from "./pages/HeaderPage"
+import MainPage from "./pages/MainPage"
+import Login from "./pages/Login"
+import Signup from "./pages/Login"
+
 function App() {
- 
-  const fetch = requests.fetc
+  const fetch = requests.fetc;
 
   const trendingMovie = () => {
-    
     axios({
       method: `GET`,
-      url: `https://api.themoviedb.org/3${fetch}`
+      url: `https://api.themoviedb.org/3${fetch}`,
     }).then((response) => {
-      console.log(response)
-    })
-  }
-
+      console.log(response);
+    });
+  };
 
   return (
     <div>
-      <div className="navbar">
-        <nav>
-          Netflix
-          <ul>
-            <a>Home</a>
-            <a>Tv Shows</a>
-            <a>Movies</a>
-            <a>Latest</a>
-            <a>MyList</a>
-          </ul>
-          <div>
-            <img alt="profile_Photo"/>
-          </div>
-        </nav>
-      </div>
+      <Router>
+        <NavigationBar />
+        <Routes>
+          <Route path="/" element={<HeaderPage />}/>
+          <Route path="/browse" element={<MainPage />}/>
+          <Route path="/login" element={<Login />}/>
+          <Route path="/signup" element={<Signup />}/>
+        </Routes>
+      </Router>
     </div>
   );
 }
