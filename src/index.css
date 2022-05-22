@@ -31,3 +31,11 @@
     @apply hover:text-gray-300 w-full h-full p-1 m-1 transition-all
     hover:bg-transparent
 }
+
+/* HEADER PAGE TAILWIDN */
+.headerPage {
+    @apply h-screen w-full
+}
+.banner_wraper {
+    @apply h-screen w-full bg-netflixbanner
+}

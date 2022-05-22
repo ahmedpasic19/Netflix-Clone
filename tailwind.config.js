@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage : {
-        banner : "./nefliximages/neflix-banner.png"
+        netflixbanner: "url('../src/nefliximages/neflix-banner.png')"
       }
     },
   },
