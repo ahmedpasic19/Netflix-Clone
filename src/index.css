@@ -37,5 +37,17 @@
     @apply h-screen w-full
 }
 .banner_wraper {
-    @apply h-screen w-full bg-netflixbanner
+    @apply h-screen w-full bg-netflixbanner bg-no-repeat
+    sm:top-10 lg:top-16 absolute text-white text-center items-center justify-center flex
+    font-bold text-[2.4rem] flex-col
+}
+.banner_wraper > h1 {
+    @apply opacity-80
+}
+.banner_wraper > p {
+    @apply font-semibold text-2xl
+}
+.trynow {
+    @apply bg-red-600 px-3 text-[1.7rem] mt-4 rounded hover:bg-red-500 
+    font-semibold
 }
