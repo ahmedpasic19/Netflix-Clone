@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import HeaderSection from "../components/HeaderSection"
+import Line from "../components/Line"
 
 export default function HeaderPage() {
 
@@ -16,9 +17,13 @@ export default function HeaderPage() {
         <p className=" mt-4 ">Ready to watch? Enter your email to create or restart your membership.</p>
         <Link className='trynow' to="/login">Get Started ⪢</Link>
       </div>
+      <Line />
       <HeaderSection title="Enjoy on your TV." text={sectionText1} section="section1"/>
+      <Line />
       <HeaderSection title="Download your shows to watch offline." text={sectionText2} section="section2"/>
+      <Line />
       <HeaderSection title="Watch everywhere." text={sectionText3} section="section1"/>
+      <Line />
       <HeaderSection title="Create profiles for kids." text={sectionText4} section="section2"/>
     </div>
   )

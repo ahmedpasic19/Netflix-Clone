@@ -58,14 +58,14 @@
 .section1{
     @apply w-full bg-black text-white
     flex items-center justify-center 
-    lg:h-[24rem] lg:flex-row 
-    sm:h-[22rem] sm:flex-col 
+    lg:h-[36rem] lg:flex-row 
+    sm:h-[32rem] sm:flex-col 
 }
 .section2{
     @apply w-full bg-black text-white
     flex items-center justify-center 
-    lg:h-[24rem] lg:flex-row-reverse 
-    sm:h-[22rem] sm:flex-col
+    lg:h-[36rem] lg:flex-row-reverse 
+    sm:h-[32rem] sm:flex-col
 }
 
 
@@ -82,4 +82,7 @@
 }
 .section_content > p {
     @apply  font-semibold text-[1.2rem]
+}
+.line{
+    @apply h-2 bg-gray-800 w-full
 }
