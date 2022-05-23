@@ -7,7 +7,7 @@
 .navbar{
     @apply bg-black text-white flex flex-row sticky top-0 left-0 justify-start items-center
     w-full sm:h-10 
-    lg:h-16
+    lg:h-16 z-10
 }
 .logo_wraper {
     @apply sm:h-8  ml-8 mr-3 lg:ml-12 cursor-pointer
@@ -34,20 +34,41 @@
 
 /* HEADER PAGE TAILWIDN */
 .headerPage {
-    @apply h-screen w-full
+    @apply h-screen w-full z-0 flex flex-col
 }
 .banner_wraper {
-    @apply h-screen w-full bg-netflixbanner bg-no-repeat
+    @apply w-full bg-netflixbanner bg-no-repeat bg-cover lg:h-[44rem] sm:h-[42rem]
     sm:top-10 lg:top-16 absolute text-white text-center items-center justify-center flex
-    font-bold text-[2.4rem] flex-col
+    font-bold sm:text-[2.4rem] lg:text-[4rem] flex-col 
 }
 .banner_wraper > h1 {
-    @apply opacity-80
+    @apply opacity-90 
 }
 .banner_wraper > p {
     @apply font-semibold text-2xl
 }
 .trynow {
-    @apply bg-red-600 px-3 text-[1.7rem] mt-4 rounded hover:bg-red-500 
-    font-semibold
+    @apply bg-red-600 px-6 text-[1.7rem] mt-4 rounded hover:bg-red-500 
+    font-semibold p-4
+}
+
+/* HEADER SECTIONS  */
+.section {
+    @apply bg-black relative lg:top-[44rem] sm:top-[42rem] text-white
+    sm:h-[42rem] flex justify-between flex-col items-center
+}
+.line {
+    @apply h-2 w-full bg-gray-900
+}
+.section_wrapper {
+    @apply flex lg:flex-row
+}
+.section_content {
+    @apply m-4
+}
+.section_content > h1 {
+    @apply text-[4rem]
+}
+.section_content > p {
+    @apply text-[1.5rem]
 }
