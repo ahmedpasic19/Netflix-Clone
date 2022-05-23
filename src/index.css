@@ -45,10 +45,10 @@
 .banner_wraper {
     @apply w-full bg-netflixbanner bg-no-repeat bg-cover lg:h-[44rem] sm:h-[42rem]
     text-white text-center items-center justify-center flex 
-     sm:text-[2.4rem] lg:text-[4rem] flex-col 
+     sm:text-[2.4rem] lg:text-[4rem] flex-col mix-blend-overlay
 }
-.banner_wraper > h1 {
-    @apply opacity-90 
+.banner_gradient {
+    @apply bg-gradient-to-b from-black via-transparent to-black
 }
 .banner_wraper > p {
     @apply  text-2xl

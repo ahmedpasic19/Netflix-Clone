@@ -11,13 +11,14 @@ export default function HeaderPage() {
 
   return (
     <div className='headerPage'>
+      <div className="banner_gradient">
       <div className='banner_wraper'>
         <h1 className="font-bold">Unlimited films, TV programms and more.</h1>
         <p className=" font-semibold">Watch anywhere. Cancel anytime.</p>
         <p className=" mt-4 ">Ready to watch? Enter your email to create or restart your membership.</p>
         <Link className='trynow' to="/login">Get Started ⪢</Link>
       </div>
-      <Line />
+      </div>
       <HeaderSection title="Enjoy on your TV." text={sectionText1} section="section1"/>
       <Line />
       <HeaderSection title="Download your shows to watch offline." text={sectionText2} section="section2"/>
