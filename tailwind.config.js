@@ -8,8 +8,8 @@ module.exports = {
         netflixbanner: "url('../src/nefliximages/neflix-banner.png')"
       },
       gridTemplateRows : {
-        headpage: `repeat(5,minmax(44rem,auto))`,
-        headpageSM: `repeat(5,minmax(42rem,auto))`
+        headpage: `44rem minmax(24rem,auto) minmax(24rem,auto) minmax(24rem,auto) minmax(24rem,auto)`,
+        headpageSM: `42rem minmax(22rem,auto) minmax(22rem,auto) minmax(22rem,auto) minmax(22rem,auto)`
       }
     },
   },

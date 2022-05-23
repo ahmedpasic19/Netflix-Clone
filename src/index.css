@@ -58,14 +58,14 @@
 .section1{
     @apply w-full bg-black text-white
     flex items-center justify-center 
-    lg:h-[44rem] lg:flex-row 
-    sm:h-[42rem] sm:flex-col 
+    lg:h-[24rem] lg:flex-row 
+    sm:h-[22rem] sm:flex-col 
 }
 .section2{
     @apply w-full bg-black text-white
     flex items-center justify-center 
-    lg:h-[44rem] lg:flex-row-reverse 
-    sm:h-[42rem] sm:flex-col
+    lg:h-[24rem] lg:flex-row-reverse 
+    sm:h-[22rem] sm:flex-col
 }
 
 
