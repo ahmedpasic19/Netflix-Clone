@@ -24,16 +24,20 @@ function App() {
   };
 
   return (
-    <Router>
-      <NavigationBar />
-      <Routes>
-        <Route path="/" element={<HeaderPage />} />
-        <Route path="/browse" element={<MainPage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-      </Routes>
+    <div className="page_container">
+      <div className="content_wraper">
+        <Router>
+          <NavigationBar />
+          <Routes>
+            <Route path="/" element={<HeaderPage />} />
+            <Route path="/browse" element={<MainPage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </Routes>
+        </Router>
+      </div>
       <Footer />
-    </Router>
+    </div>
   );
 }
 

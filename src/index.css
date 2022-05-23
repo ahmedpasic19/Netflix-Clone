@@ -2,7 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-
+.page_container {
+    @apply flex flex-col min-h-screen
+}
+.content_wraper{
+    @apply flex-1
+}
 /* NAVIGATION BAR */
 .navbar{
     @apply bg-black text-white flex flex-row sticky top-0 left-0 justify-start items-center
