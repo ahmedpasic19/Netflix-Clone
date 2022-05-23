@@ -1,7 +1,16 @@
-import React from 'react'
 
 export default function Login() {
   return (
-    <div>Login</div>
+    <div className="login">
+      <div className="form_wraper">
+        <h1>Sign In</h1>
+        <form>
+          <input type="text" placeholder="email"/>
+          <input type="password" placeholder="password"/>
+          <button>Sign In</button>
+        </form>
+        <p>New to Netflix? <a href="/">Sign Up</a></p>
+      </div>
+    </div>
   )
 }
