@@ -11,9 +11,9 @@ export default function HeaderPage() {
   return (
     <div className='headerPage'>
       <div className='banner_wraper'>
-        <h1>Unlimited films, TV programms and more.</h1>
-        <p>Watch anywhere. Cancel anytime.</p>
-        <p>Ready to watch? Enter your email to create or restart your membership.</p>
+        <h1 className="font-bold">Unlimited films, TV programms and more.</h1>
+        <p className=" font-semibold">Watch anywhere. Cancel anytime.</p>
+        <p className=" mt-4 ">Ready to watch? Enter your email to create or restart your membership.</p>
         <Link className='trynow' to="/login">Get Started ⪢</Link>
       </div>
       <HeaderSection title="Enjoy on your TV." text={sectionText1} section="section1"/>
