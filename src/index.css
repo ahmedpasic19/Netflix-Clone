@@ -90,9 +90,15 @@
 /* FOOTER STYLING */
 
 .footer {
-    @apply flex flex-row justify-center bg-gray-600 h-[24rem]
-     bottom-0 w-full z-10
+    @apply flex flex-col justify-start items-center bg-black h-[24rem]
+     bottom-0 w-full z-10 text-zinc-600 
+}
+.footer_content {
+    @apply flex flex-row justify-center mt-[4rem]
 }
 .footer_links {
     @apply flex flex-col m-10
+}
+.footer_links > a {
+    @apply w-full hover:text-gray-300 transition-all cursor-pointer hover:underline underline-offset-2 
 }
