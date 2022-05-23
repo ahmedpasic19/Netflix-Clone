@@ -57,18 +57,25 @@
 /* HEADER SECTIONS  */
 .section1{
     @apply w-full bg-black text-white
-    flex items-center justify-center
+    flex items-center justify-center 
     lg:h-[44rem] lg:flex-row 
     sm:h-[42rem] sm:flex-col 
+}
+.section2{
+    @apply w-full bg-black text-white
+    flex items-center justify-center 
+    lg:h-[44rem] lg:flex-row-reverse 
+    sm:h-[42rem] sm:flex-col
 }
 
 
 /* HEADER SECTION COMPONENTS */
 .section_content {
-    @apply flex flex-col 
+    @apply flex flex-col m-16
+    w-[450px] sm:text-center lg:text-left
 }
 .section_img {
-    @apply h-24 w-48
+    @apply h-24 w-48 m-16
 }
 .section_content > h1 {
     @apply font-semibold lg:text-[3.8rem] sm:text-[2.5rem]

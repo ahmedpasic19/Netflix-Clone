@@ -17,6 +17,9 @@ export default function HeaderPage() {
         <Link className='trynow' to="/login">Get Started ⪢</Link>
       </div>
       <HeaderSection title="Enjoy on your TV." text={sectionText1} section="section1"/>
+      <HeaderSection title="Download your shows to watch offline." text={sectionText2} section="section2"/>
+      <HeaderSection title="Watch everywhere." text={sectionText3} section="section1"/>
+      <HeaderSection title="Create profiles for kids." text={sectionText4} section="section2"/>
     </div>
   )
 }
