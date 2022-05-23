@@ -9,7 +9,12 @@ module.exports = {
       },
       gridTemplateRows : {
         headpage: `44rem 0.5rem minmax(36rem,auto) 0.5rem minmax(36rem,auto) 0.5rem minmax(36rem,auto 0.5rem) minmax(36rem,auto)`,
-        headpageSM: `42rem 0.5rem minmax(32rem,auto) 0.5rem minmax(32rem,auto) 0.5rem minmax(32rem,auto) 0.5rem minmax(32rem,auto)`
+        headpageSM: `42rem 0.5rem minmax(32rem,auto) 0.5rem minmax(32rem,auto) 0.5rem minmax(32rem,auto) 0.5rem minmax(32rem,auto)`,
+        app: `4rem auto 24rem`,
+        appSM: `2.5rem auto 24rem`
+      },
+      flex: {
+        1: `1`,
       }
     },
   },

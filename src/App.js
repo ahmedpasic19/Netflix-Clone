@@ -4,11 +4,12 @@ import requests from "./requests";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import NavigationBar from "./components/NavigationBar";
+import Footer from "./components/Footer";
 
-import HeaderPage from "./pages/HeaderPage"
-import MainPage from "./pages/MainPage"
-import Login from "./pages/Login"
-import Signup from "./pages/Login"
+import HeaderPage from "./pages/HeaderPage";
+import MainPage from "./pages/MainPage";
+import Login from "./pages/Login";
+import Signup from "./pages/Login";
 
 function App() {
   const fetch = requests.fetc;
@@ -23,17 +24,16 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <Router>
-        <NavigationBar />
-        <Routes>
-          <Route path="/" element={<HeaderPage />}/>
-          <Route path="/browse" element={<MainPage />}/>
-          <Route path="/login" element={<Login />}/>
-          <Route path="/signup" element={<Signup />}/>
-        </Routes>
-      </Router>
-    </div>
+    <Router>
+      <NavigationBar />
+      <Routes>
+        <Route path="/" element={<HeaderPage />} />
+        <Route path="/browse" element={<MainPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 
