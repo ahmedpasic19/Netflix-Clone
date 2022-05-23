@@ -16,10 +16,10 @@ export default function HeaderPage() {
         <p>Ready to watch? Enter your email to create or restart your membership.</p>
         <Link className='trynow' to="/login">Get Started ⪢</Link>
       </div>
-      <HeaderSection title="Enjoy on your TV." text={sectionText1}/>
-      <HeaderSection title="Download your shows to watch offline." text={sectionText2}/>
-      <HeaderSection title="Watch everywhere." text={sectionText3}/>
-      <HeaderSection title="Create profiles for kids." text={sectionText4}/>
+      <HeaderSection title="Enjoy on your TV." text={sectionText1} section="section1"/>
+      <HeaderSection title="Download your shows to watch offline." text={sectionText2} section="section2"/>
+      <HeaderSection title="Watch everywhere." text={sectionText3} section="section3"/>
+      <HeaderSection title="Create profiles for kids." text={sectionText4} section="section4"/>
     </div>
   )
 }
