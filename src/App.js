@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 import HeaderPage from "./pages/HeaderPage";
 import MainPage from "./pages/MainPage";
 import Login from "./pages/Login";
-import Signup from "./pages/Login";
+import Signup from "./pages/Signup";
 
 function App() {
   const fetch = requests.fetc;

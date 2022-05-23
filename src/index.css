@@ -88,7 +88,7 @@
     @apply  font-semibold text-[1.2rem]
 }
 .line{
-    @apply h-2 bg-gray-800 w-full
+    @apply h-2 bg-netflix-gray w-full
 }
 
 
@@ -112,9 +112,23 @@
 /* LOGIN PAGE */
 
 .login {
-    @apply bg-netflixbanner h-[60vh] bg-no-repeat bg-cover w-full
-    justify-center items-center flex
+    @apply bg-netflixbanner h-[80vh] bg-no-repeat bg-cover w-full
+    justify-center items-center flex 
 }
+/* FORM */
 .form_wraper {
-    @apply bg-gray-600  h-[450px] w-[350px]
+    @apply  h-[500px] w-[400px] rounded-2xl bg-black bg-opacity-70 text-white
+    flex flex-col items-center
+}
+.form_wraper > form {
+    @apply flex flex-col justify-center items-center
+}
+.form_wraper > form > input {
+    @apply m-4 p-2 w-full my-2 rounded bg-netflix-gray
+}
+.form_wraper > form > button {
+    @apply bg-red-600 p-2 text-white w-full hover:bg-red-500 rounded font-semibold
+}
+.form_wraper > h1 {
+    @apply mt-6 font-semibold text-[2rem]
 }

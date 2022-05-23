@@ -15,6 +15,9 @@ module.exports = {
       },
       flex: {
         1: `1`,
+      },
+      colors: {
+        'netflix-gray': '#333333',
       }
     },
   },
