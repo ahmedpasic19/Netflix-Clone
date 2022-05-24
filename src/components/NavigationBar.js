@@ -16,10 +16,8 @@ export default function NavigationBar() {
     (dropDownOpen) ? setdropDownOpen(false) : setdropDownOpen(true)
   }
 
-  const navigate = useNavigate()
   const logout = async() => {
     await signOut(auth)
-    navigate("/")
   }
 
   const [user, setuser] = useState({})
