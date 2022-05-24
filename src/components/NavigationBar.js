@@ -1,10 +1,21 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../Firebase-config";
 
 import logo from "../nefliximages/Logonetflix.png";
 
+
 export default function NavigationBar() {
+
+  onAuthStateChanged(auth, (currentUser) => {
+    if (!currentUser) {
+      console.log(currentUser)
+    } else {
+      console.log("No user logged in")
+    }
+  })
 
   const [dropDownOpen, setdropDownOpen] = useState(false)
 
