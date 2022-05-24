@@ -1,21 +1,19 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../Firebase-config";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+
+import { createUserWithEmailAndPassword } from "firebase/auth"
+import { auth } from "../firebase-config";
 
 export default function Signup() {
 
-  const navigate = useNavigate()
-
-  const [email, setemail] = useState("")
-  const [password, setpassword] = useState("")
+  const [registerEmail, setregisterEmail] = useState("")
+  const [registerPassword, setregisterPassword] = useState("password")
 
   const register = async () => {
-    try{
-      const user = await createUserWithEmailAndPassword(auth,email,password)
-      navigate(`/browse`)
+    try {
+      const user = await createUserWithEmailAndPassword(auth,registerEmail,registerPassword)
+      console.log(user)
     } catch (error) {
-      console.log(error.message)
+      console.log(error)
     }
   }
 
@@ -24,8 +22,8 @@ export default function Signup() {
       <div className="form_wraper">
         <h1>Sign Up</h1>
         <form>
-          <input type="text" placeholder="email" onChange={event => setemail(event.target.value)}/>
-          <input type="password" placeholder="password" onChange={event => setpassword(event.target.value)}/>
+          <input type="text" placeholder="email" onChange={(event) => {setregisterEmail(event.target.value)}}/>
+          <input type="password" placeholder="password" onChange={(event) => {setregisterPassword(event.target.value)}}/>
           <button onClick={register}>Sign Up</button>
         </form>
         <p>Already have an account?<a  href="/login"className="font-bold hover:underline underline-offset-2" >Sign In</a>
