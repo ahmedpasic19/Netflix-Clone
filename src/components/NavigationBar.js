@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import logo from "../nefliximages/Logonetflix.png";
 
-import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase-config";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import Login from "../pages/Login";
 
 export default function NavigationBar() {
   
@@ -14,9 +16,16 @@ export default function NavigationBar() {
     (dropDownOpen) ? setdropDownOpen(false) : setdropDownOpen(true)
   }
 
+  const navigate = useNavigate()
+  const logout = async() => {
+    await signOut(auth)
+    navigate("/")
+  }
+
   const [user, setuser] = useState({})
-  onAuthStateChanged(auth,(currentUser) => {
+  onAuthStateChanged(auth, (currentUser) => {
     setuser(currentUser)
+    console.log(user)
   })
 
   return (
@@ -30,11 +39,11 @@ export default function NavigationBar() {
         <Link to="/" className="nav_Link">Movies</Link>
         <Link to="/" className="nav_Link">Latest</Link>
         <Link to="/" className="nav_Link">MyList</Link>
+        <button onClick={() => {logout()}} className="px-3 bg-red-600 rounded">Log out</button>
       </ul>
+        <div className="h-10 text-white">{user?.email}</div>
       <button className="resBtn" onClick={openMenu}>Menu</button>
       {(dropDownOpen) ? dropdownMenu() : ""}
-      <button>Logout</button>
-      {user?.email}
     </div>
   );
 }
