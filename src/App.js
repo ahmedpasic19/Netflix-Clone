@@ -12,7 +12,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
 function App() {
-  const fetch = requests.fetchActionMovies;
+  // const fetch = requests.fetchActionMovies;
 
   const trendingMovie = () => {
     axios({
