@@ -11,8 +11,11 @@ import MainPage from "./pages/MainPage";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
+import { auth } from "./Firebase-config";
+import { onAuthStateChanged } from "firebase/auth";
+
 function App() {
-  const fetch = requests.fetc;
+  const fetch = requests.fetchActionMovies;
 
   const trendingMovie = () => {
     axios({

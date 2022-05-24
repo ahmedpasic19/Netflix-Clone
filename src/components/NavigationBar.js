@@ -1,22 +1,21 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../Firebase-config";
+import { signOut } from "firebase/auth";
 
 import logo from "../nefliximages/Logonetflix.png";
 
 
 export default function NavigationBar() {
 
-  onAuthStateChanged(auth, (currentUser) => {
-    if (!currentUser) {
-      console.log(currentUser)
-    } else {
-      console.log("No user logged in")
-    }
-  })
 
+  const logout = async() => {
+    await signOut(auth)
+    console.log("user logged out")
+  }
+
+  
   const [dropDownOpen, setdropDownOpen] = useState(false)
 
   const openMenu = () => {
@@ -37,6 +36,7 @@ export default function NavigationBar() {
       </ul>
       <button className="resBtn" onClick={openMenu}>Menu</button>
       {(dropDownOpen) ? dropdownMenu() : ""}
+      <button onClick={logout} className=" bg-red-600 px-3 rounded">Log out</button>
     </div>
   );
 }

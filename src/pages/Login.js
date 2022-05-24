@@ -1,4 +1,10 @@
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../Firebase-config";
+
 export default function Login() {
+
+  
+
   return (
     <div className="login">
       <div className="form_wraper">
