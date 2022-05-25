@@ -13,15 +13,6 @@ export default function NavigationBar() {
   const openMenu = () => {
     (dropDownOpen) ? setdropDownOpen(false) : setdropDownOpen(true)
   }
-
-  const logout = async() => {
-    try {
-      await signOut(auth)
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
   const [user, setuser] = useState({})
   onAuthStateChanged(auth, (currentUser) => {
     setuser(currentUser)
@@ -39,7 +30,6 @@ export default function NavigationBar() {
         <Link to="/" className="nav_Link">Movies</Link>
         <Link to="/" className="nav_Link">Latest</Link>
         <Link to="/" className="nav_Link">MyList</Link>
-        <button onClick={() => {logout()}} className="px-3 bg-red-600 rounded">Log out</button>
       </ul>
         <div className="h-10 text-white">{user?.email}</div>
       <button className="resBtn" onClick={openMenu}>Menu</button>
