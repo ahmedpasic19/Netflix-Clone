@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import logo from "../nefliximages/Logonetflix.png";
 
 import { auth } from "../firebase-config";
-import { onAuthStateChanged, signOut } from "firebase/auth";
-import Login from "../pages/Login";
+import { onAuthStateChanged } from "firebase/auth";
 
 export default function NavigationBar() {
   const [dropDownOpen, setdropDownOpen] = useState(false)
@@ -26,10 +24,10 @@ export default function NavigationBar() {
       </Link>
       <ul className="nav_links">
         <Link to="/browse" className="nav_Link">Home</Link>
-        <Link to="/" className="nav_Link">Tv Shows</Link>
-        <Link to="/" className="nav_Link">Movies</Link>
-        <Link to="/" className="nav_Link">Latest</Link>
-        <Link to="/" className="nav_Link">MyList</Link>
+        <Link to="/TVshows" className="nav_Link">Tv Shows</Link>
+        <Link to="/movies" className="nav_Link">Movies</Link>
+        <Link to="/latest" className="nav_Link">Latest</Link>
+        <Link to="/mylist" className="nav_Link">MyList</Link>
       </ul>
         <div className="h-10 text-white">{user?.email}</div>
       <button className="resBtn" onClick={openMenu}>Menu</button>
@@ -42,10 +40,10 @@ function dropdownMenu (){
   return (
     <div className="dropdownMenu">
       <Link to="/browse" className="nav_Link">Home</Link>
-      <Link to="/" className="nav_Link">Tv Shows</Link>
-      <Link to="/" className="nav_Link">Movies</Link>
-      <Link to="/" className="nav_Link">Latest</Link>
-      <Link to="/" className="nav_Link">MyList</Link>
+      <Link to="/TVshows" className="nav_Link">Tv Shows</Link>
+      <Link to="/movies" className="nav_Link">Movies</Link>
+      <Link to="/latest" className="nav_Link">Latest</Link>
+      <Link to="/mylist" className="nav_Link">MyList</Link>
     </div>
   )
 }

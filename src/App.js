@@ -10,8 +10,14 @@ import HeaderPage from "./pages/HeaderPage";
 import MainPage from "./pages/MainPage";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Latest from "./pages/Latest"
+import Movies from "./pages/Movies"
+import Mylist from "./pages/Mylist";
+import TVshows from "./pages/TVshows"
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import ProtectedRoutesLoggedIn from "./components/ProtectedRoutesLoggedIn"
+
+
 
 function App() {
   // const fetch = requests.fetchActionMovies;
@@ -35,6 +41,10 @@ function App() {
             <Route path="/browse" element={<ProtectedRoutes><MainPage /></ProtectedRoutes>} />
             <Route path="/login" element={<ProtectedRoutesLoggedIn><Login /></ProtectedRoutesLoggedIn>} />
             <Route path="/signup" element={<ProtectedRoutesLoggedIn><Signup /></ProtectedRoutesLoggedIn>} />
+            <Route path="/TVshows" element={<TVshows />} />
+            <Route path="/movies" element={<Movies />} />
+            <Route path="/latest" element={<Latest />} />
+            <Route path="/mylist" element={<Mylist />} />
           </Routes>
         </Router>
       </div>
