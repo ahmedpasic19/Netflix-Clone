@@ -4,19 +4,18 @@ import logo from "../nefliximages/Logonetflix.png";
 
 import { auth } from "../firebase-config";
 import { onAuthStateChanged } from "firebase/auth";
+import Dropdown from "./Dropdown";
+
 
 export default function NavigationBar() {
   const [dropDownOpen, setdropDownOpen] = useState(false)
   const [showLink, setshowLink] = useState("nav_Link")
   const [showBtn, setshowBtn] = useState()
-
+ 
   const openMenu = () => {
     (dropDownOpen) ? setdropDownOpen(false) : setdropDownOpen(true)
   }
-  const [user, setuser] = useState({})
-  onAuthStateChanged(auth, (currentUser) => {
-    setuser(currentUser)
-  })
+  
   
   onAuthStateChanged(auth,(currentUser) => {
     if(currentUser) {
@@ -26,19 +25,15 @@ export default function NavigationBar() {
     }
   })
 
-  function dropdownMenu (){
-  
-    return (
-      <div className="dropdownMenu">
-        <Link to="/browse" className="nav_Link">Home</Link>
-        <Link to="/TVshows" className="nav_Link">Tv Shows</Link>
-        <Link to="/movies" className="nav_Link">Movies</Link>
-        <Link to="/latest" className="nav_Link">Latest</Link>
-        <Link to="/mylist" className="nav_Link">MyList</Link>
-      </div>
-    )
+  // HAMBUREGER MENU 
+const dropdownMenu = () => {
+  for(let i = 0; i >= 1 ; i++) {
+    return <Dropdown />
   }
+}
+
   
+  // REGULAR NAVIGATION BAR
   return (
     <div className="navbar">
       <Link className="logo_wraper" to="/browse" >
@@ -51,10 +46,8 @@ export default function NavigationBar() {
         <Link to="/latest" className={showLink}>Latest</Link>
         <Link to="/mylist" className={showLink}>MyList</Link>
       </ul>
-        <div className="h-10 text-white">{user?.email}</div>
       <button className="resBtn" onClick={openMenu}>Menu</button>
-      {(dropDownOpen) ? dropdownMenu() : ""}
+      {(dropDownOpen) ? dropdownMenu() : console.log("menu CLOSED")}
     </div>
   );
 }
-
