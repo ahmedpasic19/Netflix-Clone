@@ -10,6 +10,7 @@ import HeaderPage from "./pages/HeaderPage";
 import MainPage from "./pages/MainPage";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import ProtectedRoutes from "./components/ProtectedRoutes";
 
 function App() {
   // const fetch = requests.fetchActionMovies;
@@ -30,7 +31,7 @@ function App() {
           <NavigationBar />
           <Routes>
             <Route path="/" element={<HeaderPage />} />
-            <Route path="/browse" element={<MainPage />} />
+            <Route path="/browse" element={<ProtectedRoutes><MainPage /></ProtectedRoutes>} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
           </Routes>

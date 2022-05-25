@@ -16,7 +16,7 @@ export default function NavigationBar() {
   const [user, setuser] = useState({})
   onAuthStateChanged(auth, (currentUser) => {
     setuser(currentUser)
-    console.log(user)
+    console.log(currentUser)
   })
 
   return (
