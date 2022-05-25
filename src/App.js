@@ -1,6 +1,10 @@
 import axios from "axios";
 import requests from "./requests";
 
+import { useState } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase-config";
+
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import NavigationBar from "./components/NavigationBar";
@@ -21,7 +25,6 @@ import ProtectedRoutesLoggedIn from "./components/ProtectedRoutesLoggedIn"
 
 function App() {
   // const fetch = requests.fetchActionMovies;
-
   const trendingMovie = () => {
     axios({
       method: `GET`,
@@ -31,17 +34,26 @@ function App() {
     });
   };
 
+  // const [authorized, setauthorized] = useState()
+
+  // onAuthStateChanged(auth,(currentUser) => {
+  //   if(currentUser) {
+  //     setauthorized(true)
+  //   }
+  // })
+  const authorized = true
+
   return (
     <div className="page_container">
       <div className="content_wraper">
         <Router>
           <NavigationBar />
           <Routes>
-            <Route path="/" element={<HeaderPage />} />
-            <Route path="/browse" element={<ProtectedRoutes><MainPage /></ProtectedRoutes>} />
-            <Route path="/login" element={<ProtectedRoutesLoggedIn><Login /></ProtectedRoutesLoggedIn>} />
-            <Route path="/signup" element={<ProtectedRoutesLoggedIn><Signup /></ProtectedRoutesLoggedIn>} />
-            <Route path="/TVshows" element={<TVshows />} />
+            <Route path="/" element={<HeaderPage authorized={authorized}/>} />
+            <Route path="/login" element={<Login authorized={authorized}/>} />
+            <Route path="/signup" element={<Signup authorized={authorized}/>} />
+            <Route path="/browse" element={<MainPage authorized={authorized}/>} />
+            <Route path="/TVshows" element={<TVshows authorized={authorized}/>} />
             <Route path="/movies" element={<Movies />} />
             <Route path="/latest" element={<Latest />} />
             <Route path="/mylist" element={<Mylist />} />

@@ -2,9 +2,9 @@ import { useState } from "react";
 
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../firebase-config";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 
-export default function Signup() {
+export default function Signup({authorized}) {
 
   const [registerEmail, setregisterEmail] = useState("")
   const [registerPassword, setregisterPassword] = useState("password")
@@ -20,6 +20,11 @@ export default function Signup() {
       console.log(error)
     }
   }
+
+  if(authorized) {
+    return <Navigate to="/browse" />
+  }
+
 
   return (
     <div className="login">

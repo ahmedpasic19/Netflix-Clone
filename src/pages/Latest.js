@@ -1,6 +1,9 @@
-import React from 'react'
+import { Navigate } from "react-router-dom"
+export default function Latest({authorized}) {
 
-export default function Latest() {
+  if(!authorized) {
+    return <Navigate to="/login" />
+  }
   return (
     <div>Latest</div>
   )

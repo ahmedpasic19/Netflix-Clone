@@ -1,7 +1,8 @@
-import React from 'react'
+import { Navigate } from "react-router-dom";
 
-export default function Movies() {
-  return (
-    <div>Movies</div>
-  )
+export default function Movies({ authorized }) {
+  if (!authorized) {
+    return <Navigate to="/login" />;
+  }
+  return <div>Movies</div>;
 }

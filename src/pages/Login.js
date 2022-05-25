@@ -1,9 +1,11 @@
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../firebase-config";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 
-export default function Login() {
+export default function Login({authorized}) {
+
+  
 
   const [loginEmail, setloginEmail] = useState("")
   const [loginPassword, setloginPassword] = useState("")
@@ -17,6 +19,10 @@ export default function Login() {
     } catch (error) {
       console.log(error.message)
     }
+  }
+
+  if(authorized) {
+    return <Navigate to="/browse" />
   }
 
   return (
