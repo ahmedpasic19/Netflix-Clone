@@ -54,7 +54,7 @@ function App() {
             <Route path="/signup" element={<Signup authorized={authorized}/>} />
             <Route path="/browse" element={<MainPage authorized={authorized}/>} />
             <Route path="/TVshows" element={<TVshows authorized={authorized}/>} />
-            <Route path="/movies" element={<Movies />} />
+            <Route path="/movies" element={<Movies authorized={authorized}/>} />
             <Route path="/latest" element={<Latest />} />
             <Route path="/mylist" element={<Mylist />} />
           </Routes>
