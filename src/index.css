@@ -11,8 +11,12 @@
 /* NAVIGATION BAR */
 .navbar{
     @apply bg-black text-white flex flex-row sticky top-0 left-0 justify-start items-center
-    w-full sm:h-10 
-    lg:h-16 z-10
+    w-full sm:hidden lg:flex
+    lg:h-16 z-10 
+}
+.sm_navbar{
+    @apply bg-black text-white flex flex-row sticky top-0 left-0 justify-start items-center
+    w-full sm:h-10 z-10 lg:hidden sm:flex
 }
 .logo_wraper {
     @apply sm:h-8  ml-8 mr-3 lg:ml-12 cursor-pointer
