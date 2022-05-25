@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import logo from "../nefliximages/Logonetflix.png";
 
 import { auth } from "../firebase-config";
@@ -9,15 +8,18 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import Login from "../pages/Login";
 
 export default function NavigationBar() {
-  
   const [dropDownOpen, setdropDownOpen] = useState(false)
-
+  
   const openMenu = () => {
     (dropDownOpen) ? setdropDownOpen(false) : setdropDownOpen(true)
   }
 
   const logout = async() => {
-    await signOut(auth)
+    try {
+      await signOut(auth)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   const [user, setuser] = useState({})
