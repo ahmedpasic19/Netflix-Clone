@@ -24,7 +24,8 @@ import ProtectedRoutesLoggedIn from "./components/ProtectedRoutesLoggedIn"
 
 
 function App() {
-  // const fetch = requests.fetchActionMovies;
+  // FETCHING MOVIES WITH AXIOS
+  const fetch = requests.fetchActionMovies;
   const trendingMovie = () => {
     axios({
       method: `GET`,
@@ -34,15 +35,14 @@ function App() {
     });
   };
 
+  // CHECKING IF USER AUTHORIZED AND RESTRICTING CERTAN PAGES
   const [authorized, setauthorized] = useState()
-
   onAuthStateChanged(auth,(currentUser) => {
     if(currentUser) {
       setauthorized(true)
     } else {
       setauthorized(false)
     }
-    console.log(authorized)
   })
   
   return (
