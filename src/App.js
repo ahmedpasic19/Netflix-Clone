@@ -41,7 +41,7 @@ function App() {
   //     setauthorized(true)
   //   }
   // })
-  const authorized = false
+  const authorized = true
 
   return (
     <div className="page_container">
@@ -55,7 +55,7 @@ function App() {
             <Route path="/browse" element={<MainPage authorized={authorized}/>} />
             <Route path="/TVshows" element={<TVshows authorized={authorized}/>} />
             <Route path="/movies" element={<Movies authorized={authorized}/>} />
-            <Route path="/latest" element={<Latest />} />
+            <Route path="/latest" element={<Latest authorized={authorized}/>} />
             <Route path="/mylist" element={<Mylist />} />
           </Routes>
         </Router>
