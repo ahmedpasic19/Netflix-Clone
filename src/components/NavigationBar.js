@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logo from "../nefliximages/Logonetflix.png";
 
 import { auth } from "../firebase-config";
 import { onAuthStateChanged } from "firebase/auth";
 
 export default function NavigationBar() {
-  const [showLink, setshowLink] = useState("nav_Link")
+  const [showLink, setshowLink] = useState()
   const [showBtn, setshowBtn] = useState()
-
   
   // CHECKS IF USER IS LOGGED AND SHOWS/HIDES lg NAVBAR LINKS
   onAuthStateChanged(auth,(currentUser) => {
@@ -20,6 +19,9 @@ export default function NavigationBar() {
       setshowBtn("hidden")
     }
   })
+  
+  // FUNCTION FOR SHOWING DROPDOWN MENU
+  const [nav, setNav] = useState(false)
   
   // REGULAR NAVIGATION BAR
   return (
@@ -37,8 +39,8 @@ export default function NavigationBar() {
         <Link to="/mylist" className={showLink}>MyList</Link>
       </ul>
       <p>LG navbar</p>
-      <button className={showBtn}>Menu</button>
     </div>
+
 
     {/* NAVBAR FOR sm SCREENS */}
     <div className="sm_navbar">
@@ -53,11 +55,8 @@ export default function NavigationBar() {
         <Link to="/mylist" className={showLink}>MyList</Link>
       </ul>
       <p>SM navbar</p>
-      <button className={showBtn}>Menu</button>
+      <button className={showBtn} onClick={() => {setNav((curr) => !curr)}}>MENU</button>
     </div>
-
-
-
-    </div>
+  </div>
   );
 }

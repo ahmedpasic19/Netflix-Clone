@@ -5,9 +5,11 @@ import { useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase-config";
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, NavigationType, Route, Routes } from "react-router-dom";
 
 import NavigationBar from "./components/NavigationBar";
+import NavBar from "./components/NavBar";
+import GITNavbar from "./components/GITNavbar"
 import Footer from "./components/Footer";
 
 import HeaderPage from "./pages/HeaderPage";
@@ -49,7 +51,7 @@ function App() {
     <div className="page_container">
       <div className="content_wraper">
         <Router>
-          <NavigationBar />
+          <NavigationBar/>
           <Routes>
             <Route path="/" element={<HeaderPage authorized={authorized}/>} />
             <Route path="/login" element={<Login authorized={authorized}/>} />

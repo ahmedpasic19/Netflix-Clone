@@ -10,9 +10,8 @@
 }
 /* NAVIGATION BAR */
 .navbar{
-    @apply bg-black text-white flex flex-row sticky top-0 left-0 justify-start items-center
-    w-full sm:hidden lg:flex
-    lg:h-16 z-10 
+    @apply bg-black text-white flex flex-row sticky 
+    w-full h-16 z-10 top-0 left-0 justify-start items-center
 }
 .sm_navbar{
     @apply bg-black text-white flex flex-row sticky top-0 left-0 justify-start items-center
@@ -22,14 +21,14 @@
     @apply sm:h-8  ml-8 mr-3 lg:ml-12 cursor-pointer
 }
 .nav_links {
-    @apply sm:hidden lg:block h-auto w-auto
+    @apply hidden lg:block h-auto w-auto
 }
 .logo {
     @apply sm:h-8 
 }
 .resBtn {
-    @apply  bg-red-600 px-2 m-2 lg:hidden hover:text-gray-300
-    rounded
+    @apply  bg-red-600 px-3 p-2 m-2 lg:hidden hover:text-gray-300
+    rounded cursor-pointer sm:flex
 }
 .dropdownMenu {
     @apply h-fit bg-red-600 text-white top-10 fixed lg:hidden 
