@@ -34,15 +34,17 @@ function App() {
     });
   };
 
-  // const [authorized, setauthorized] = useState()
+  const [authorized, setauthorized] = useState()
 
-  // onAuthStateChanged(auth,(currentUser) => {
-  //   if(currentUser) {
-  //     setauthorized(true)
-  //   }
-  // })
-  const authorized = true
-
+  onAuthStateChanged(auth,(currentUser) => {
+    if(currentUser) {
+      setauthorized(true)
+    } else {
+      setauthorized(false)
+    }
+    console.log(authorized)
+  })
+  
   return (
     <div className="page_container">
       <div className="content_wraper">
@@ -56,7 +58,7 @@ function App() {
             <Route path="/TVshows" element={<TVshows authorized={authorized}/>} />
             <Route path="/movies" element={<Movies authorized={authorized}/>} />
             <Route path="/latest" element={<Latest authorized={authorized}/>} />
-            <Route path="/mylist" element={<Mylist />} />
+            <Route path="/mylist" element={<Mylist authorized={authorized}/>} />
           </Routes>
         </Router>
       </div>
