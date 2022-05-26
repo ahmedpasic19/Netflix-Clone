@@ -155,7 +155,7 @@
     @apply ml-6
 }
 .link {
-    @apply m-2 hover:text-gray-300 transition-all hover:underline underline-offset-2
+    @apply m-2 hover:text-gray-300 transition-all hover:underline underline-offset-2 
 }
 .menuBtn {
     @apply bg-red-600 px-3 p-1 hover:text-gray-300 transition-all rounded lg:hidden

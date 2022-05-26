@@ -13,9 +13,9 @@ const NavigationBar = () => {
   return (
     <nav className='navbar'>
         <div className='lg-navbar'>
-            <div className="logo-wrapper">
+            <Link className="logo-wrapper" to="/browse">
                 <img src={logo} className="logo"/>
-            </div>
+            </Link>
             <ul className="link-wrapper">
                 <Link to="/browse" className="link">Home</Link>
                 <Link to="/TVshows" className="link">TV shows</Link>
