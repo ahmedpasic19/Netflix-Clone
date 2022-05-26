@@ -8,8 +8,6 @@ import { auth } from "./firebase-config";
 import { BrowserRouter as Router, NavigationType, Route, Routes } from "react-router-dom";
 
 import NavigationBar from "./components/NavigationBar";
-import NavBar from "./components/NavBar";
-import GITNavbar from "./components/GITNavbar"
 import Footer from "./components/Footer";
 
 import HeaderPage from "./pages/HeaderPage";
