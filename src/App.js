@@ -34,6 +34,7 @@ function App() {
       console.log(response);
     });
   };
+  trendingMovie()
 
   // CHECKING IF USER AUTHORIZED AND RESTRICTING CERTAN PAGES
   const [authorized, setauthorized] = useState()

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../firebase-config";
